@@ -7,6 +7,20 @@
 
 #include "triangle_containment.hpp"
 
+/* Three distinct points are plotted at random on a Cartesian plane, for which -1000 ≤ x, y ≤ 1000, such that a triangle is formed.
+ * 
+ * Consider the following two triangles:
+ * 
+ * A(-340,495), B(-153,-910), C(835,-947)
+ * X(-175,41), Y(-421,-714), Z(574,-645)
+ * 
+ * It can be verified that triangle ABC contains the origin, whereas triangle XYZ does not.
+ * 
+ * Using triangles.txt (right click and 'Save Link/Target As...'), a 27K text file containing the co-ordinates of one thousand "random" triangles, find the number of triangles for which the interior contains the origin.
+ * 
+ * NOTE: The first two examples in the file represent the triangles in the example given above.
+ */
+
 struct Row {
   long p1x, p1y, p2x, p2y, p3x, p3y;
   Row(std::vector<long> row) {
@@ -19,7 +33,9 @@ struct Row {
   }
 };
 
-// Edit this function
+/* Edit this function any way you see fit to achieve the goal.
+ * Build and run the executable to test your answer.
+ */
 long getTestCount() { return 0; }
 
 long getReferenceCount(const std::vector<Row>& triangle_corners) {
@@ -43,7 +59,7 @@ void runTest(const std::vector<Row>& triangle_corners) {
 }
 
 int main(int argc, char** argv) {
-  std::ifstream infile{"triangles.txt"};
+  std::ifstream infile{"../triangles.txt"};
 
   std::vector<Row> triangle_corners;
   std::string line;
